@@ -1,8 +1,8 @@
-package com.Valverde.facturacion.almacen.service;
+package com.Valverde.sistema.service;
 
 import org.springframework.data.domain.Pageable;
 
-import com.Valverde.facturacion.almacen.entity.Rol;
+import com.Valverde.sistema.entity.Rol;
 
 import java.util.List;
 

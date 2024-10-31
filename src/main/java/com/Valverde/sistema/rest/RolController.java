@@ -1,4 +1,4 @@
-package com.Valverde.facturacion.almacen.rest;
+package com.Valverde.sistema.rest;
 
 import java.util.List;
 
@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.Valverde.facturacion.almacen.entity.Rol;
-import com.Valverde.facturacion.almacen.service.RolService;
+import com.Valverde.sistema.entity.Rol;
+import com.Valverde.sistema.service.RolService;
 
 @RestController
 @RequestMapping("/v1/roles")

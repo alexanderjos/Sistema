@@ -1,10 +1,10 @@
-package com.Valverde.facturacion.almacen.repository;
+package com.Valverde.sistema.repository;
 
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.Valverde.facturacion.almacen.entity.Rol;
+import com.Valverde.sistema.entity.Rol;
 
 import java.util.List;
 

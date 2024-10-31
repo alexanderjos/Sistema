@@ -1,9 +1,9 @@
-package com.Valverde.facturacion.almacen.converter;
+package com.Valverde.sistema.converter;
 
 import org.springframework.stereotype.Component;
 
-import com.Valverde.facturacion.almacen.dto.ClienteDto;
-import com.Valverde.facturacion.almacen.entity.Cliente;
+import com.Valverde.sistema.dto.ClienteDto;
+import com.Valverde.sistema.entity.Cliente;
 
 @Component
 public class ClienteConverter extends AbstractConverter<Cliente, ClienteDto> {

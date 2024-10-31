@@ -1,12 +1,12 @@
-package com.Valverde.facturacion.almacen.service.impl;
+package com.Valverde.sistema.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import com.Valverde.facturacion.almacen.entity.Rol;
-import com.Valverde.facturacion.almacen.repository.RolRepository;
-import com.Valverde.facturacion.almacen.service.RolService;
+import com.Valverde.sistema.entity.Rol;
+import com.Valverde.sistema.repository.RolRepository;
+import com.Valverde.sistema.service.RolService;
 
 import java.util.List;
 

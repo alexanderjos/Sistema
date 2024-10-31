@@ -1,4 +1,4 @@
-package com.Valverde.facturacion.almacen.rest;
+package com.Valverde.sistema.rest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
@@ -7,12 +7,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.Valverde.facturacion.almacen.converter.PermisoConverter;
-import com.Valverde.facturacion.almacen.dto.CategoriaDto;
-import com.Valverde.facturacion.almacen.dto.PermisoDto;
-import com.Valverde.facturacion.almacen.entity.Permiso;
-import com.Valverde.facturacion.almacen.service.PermisoService;
-import com.Valverde.facturacion.almacen.util.WrapperResponse;
+import com.Valverde.sistema.converter.PermisoConverter;
+import com.Valverde.sistema.dto.CategoriaDto;
+import com.Valverde.sistema.dto.PermisoDto;
+import com.Valverde.sistema.entity.Permiso;
+import com.Valverde.sistema.service.PermisoService;
+import com.Valverde.sistema.util.WrapperResponse;
 
 import java.util.List;
 

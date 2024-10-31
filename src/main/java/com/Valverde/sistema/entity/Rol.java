@@ -1,4 +1,4 @@
-package com.Valverde.facturacion.almacen.entity;
+package com.Valverde.sistema.entity;
 
 import java.util.Date;
 import java.util.HashSet;

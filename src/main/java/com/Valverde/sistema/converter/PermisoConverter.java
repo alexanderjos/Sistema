@@ -1,9 +1,9 @@
-package com.Valverde.facturacion.almacen.converter;
+package com.Valverde.sistema.converter;
 
 import org.springframework.stereotype.Component;
 
-import com.Valverde.facturacion.almacen.dto.PermisoDto;
-import com.Valverde.facturacion.almacen.entity.Permiso;
+import com.Valverde.sistema.dto.PermisoDto;
+import com.Valverde.sistema.entity.Permiso;
 
 @Component
 public class PermisoConverter extends AbstractConverter<Permiso, PermisoDto> {

@@ -1,7 +1,7 @@
-package com.Valverde.facturacion.almacen.validator;
+package com.Valverde.sistema.validator;
 
-import com.Valverde.facturacion.almacen.entity.Permiso;
-import com.Valverde.facturacion.almacen.exception.ValidateException;
+import com.Valverde.sistema.entity.Permiso;
+import com.Valverde.sistema.exception.ValidateException;
 
 public class PermisoValidator {
     public static void save(Permiso registro) {

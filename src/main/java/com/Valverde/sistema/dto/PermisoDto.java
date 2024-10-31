@@ -1,4 +1,4 @@
-package com.Valverde.facturacion.almacen.dto;
+package com.Valverde.sistema.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
