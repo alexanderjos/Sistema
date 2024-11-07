@@ -54,7 +54,6 @@ public class RolServiceImpl implements RolService {
             }
             Rol registro = repository.findById(rol.getId()).orElseThrow();
             registro.setNombre(rol.getNombre());
-            registro.setPassword(rol.getPassword());
             repository.save(registro);
             return registro;
         } catch (Exception e) {

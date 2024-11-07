@@ -1,10 +1,10 @@
 package com.Valverde.sistema.validator;
 
-import com.Valverde.sistema.entity.Categoria;
+import com.Valverde.sistema.entity.Rol;
 import com.Valverde.sistema.exception.ValidateException;
 
-public class CategoriaValidator {
-    public static void save(Categoria registro) {
+public class RolValidator {
+    public static void save(Rol registro) {
         // Validación del nombre
         if (registro.getNombre() == null || registro.getNombre().trim().isEmpty()) {
             throw new ValidateException("El nombre es requerido");

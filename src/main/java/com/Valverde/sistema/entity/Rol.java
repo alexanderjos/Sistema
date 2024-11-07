@@ -38,18 +38,6 @@ public class Rol {
     @Column(name = "nombre", length = 20, nullable = false)
     private String nombre;
 
-    @Column(name = "direccion", length = 100, nullable = true)
-    private String direccion;
-
-    @Column(name = "telefono", length = 15, nullable = true)
-    private String telefono;
-
-    @Column(name = "email", length = 50, nullable = true)
-    private String email;
-
-    @Column(name = "password", length = 100, nullable = false)
-    private String password;
-
     @ManyToMany(mappedBy = "roles")
     private Set<Usuario> usuarios = new HashSet<>();
 

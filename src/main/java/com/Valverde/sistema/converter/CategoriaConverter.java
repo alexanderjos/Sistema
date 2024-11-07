@@ -14,7 +14,7 @@ public class CategoriaConverter extends AbstractConverter<Categoria, CategoriaDt
         return CategoriaDto.builder()
                 .id(entity.getId())
                 .nombre(entity.getNombre())
-                .descripcion(entity.getDescripcion())
+                .activo(entity.isActivo())
                 .build();
     }
 
@@ -25,7 +25,9 @@ public class CategoriaConverter extends AbstractConverter<Categoria, CategoriaDt
         return Categoria.builder()
                 .id(dto.getId())
                 .nombre(dto.getNombre())
-                .descripcion(dto.getDescripcion())
+                .activo(dto.isActivo())
                 .build();
     }
 }
+
+

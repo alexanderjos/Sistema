@@ -37,8 +37,8 @@ public class Categoria {
     @Column(name = "nombre", length = 70, nullable = false)
     private String nombre;
 
-    @Column(name = "descripcion", length = 120)
-    private String descripcion;
+    @Column(name = "activo" )
+    private boolean activo;
 
     @Column(name = "created_at")
     @Temporal(TemporalType.TIMESTAMP)

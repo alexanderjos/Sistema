@@ -74,7 +74,7 @@ public class CategoriaServiceImpl implements CategoriaService {
             Categoria registro = repository.findById(categoria.getId())
                     .orElseThrow(() -> new NoDataFoundException("No existe un registro como ese id"));
             registro.setNombre(categoria.getNombre());
-            registro.setDescripcion(categoria.getDescripcion());
+            registro.setActivo(categoria.isActivo());
             repository.save(registro);
 
             return registro;
