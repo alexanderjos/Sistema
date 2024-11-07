@@ -16,6 +16,7 @@ import com.Valverde.sistema.repository.IngresoRepository;
 
 import com.Valverde.sistema.service.IngresoService;
 import com.Valverde.sistema.service.UsuarioService;
+import com.Valverde.sistema.validator.IngresoValidator;
 
 @Service
 
@@ -91,7 +92,7 @@ public Ingreso save(Ingreso ingreso) {
         }
 
         // Validar el cliente (ya ahora con el tipo de documento cargado)
-        //ClienteValidator.save(cliente);
+        IngresoValidator.save(ingreso);
 
         // Guardar o actualizar el cliente
         if (ingreso.getId() == 0) {

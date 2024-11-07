@@ -12,5 +12,6 @@ public class RolValidator {
         if (registro.getNombre().length() > 70) {
             throw new ValidateException("El nombre no debe exceder los 70 caracteres");
         }
+        
     }
 }

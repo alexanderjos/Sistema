@@ -15,6 +15,7 @@ import com.Valverde.sistema.exception.ValidateException;
 import com.Valverde.sistema.repository.ProductoRepository;
 import com.Valverde.sistema.service.CategoriaService;
 import com.Valverde.sistema.service.ProductoService;
+import com.Valverde.sistema.validator.ProductoValidator;
 
 @Service
 
@@ -93,8 +94,7 @@ public Producto save(Producto producto) {
         }
 
         // Validar el cliente (ya ahora con el tipo de documento cargado)
-        //ClienteValidator.save(cliente);
-
+        ProductoValidator.save(producto);
         // Guardar o actualizar el cliente
         if (producto.getId() == 0) {
             return repository.save(producto); // Guardar nuevo cliente

@@ -15,6 +15,7 @@ import com.Valverde.sistema.exception.ValidateException;
 import com.Valverde.sistema.repository.UsuarioRepository;
 import com.Valverde.sistema.service.RolService;
 import com.Valverde.sistema.service.UsuarioService;
+import com.Valverde.sistema.validator.UsuarioValidator;
 
 @Service
 
@@ -93,8 +94,7 @@ public Usuario save(Usuario usuario) {
         }
 
         // Validar el cliente (ya ahora con el tipo de documento cargado)
-        //ClienteValidator.save(cliente);
-
+        UsuarioValidator.save(usuario);
         // Guardar o actualizar el cliente
         if (usuario.getId() == 0) {
             return repository.save(usuario); // Guardar nuevo cliente

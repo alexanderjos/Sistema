@@ -7,7 +7,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.Valverde.sistema.entity.Categoria;
 import com.Valverde.sistema.entity.DetalleIngreso;
 import com.Valverde.sistema.entity.Ingreso;
 import com.Valverde.sistema.entity.Producto;
@@ -15,8 +14,7 @@ import com.Valverde.sistema.exception.GeneralException;
 import com.Valverde.sistema.exception.NoDataFoundException;
 import com.Valverde.sistema.exception.ValidateException;
 import com.Valverde.sistema.repository.DetalleIngresoRepository;
-import com.Valverde.sistema.repository.ProductoRepository;
-import com.Valverde.sistema.service.CategoriaService;
+
 import com.Valverde.sistema.service.DetalleIngresoService;
 import com.Valverde.sistema.service.IngresoService;
 import com.Valverde.sistema.service.ProductoService;

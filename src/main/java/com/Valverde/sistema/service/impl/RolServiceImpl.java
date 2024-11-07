@@ -11,6 +11,7 @@ import com.Valverde.sistema.exception.NoDataFoundException;
 import com.Valverde.sistema.exception.ValidateException;
 import com.Valverde.sistema.repository.RolRepository;
 import com.Valverde.sistema.service.RolService;
+import com.Valverde.sistema.validator.RolValidator;
 
 import java.util.List;
 
@@ -63,8 +64,9 @@ public class RolServiceImpl implements RolService {
     @Transactional
     public Rol save(Rol rol) {
         try {
-            //CategoriaValidator.save(categoria);
 
+            RolValidator.save(rol);
+            
             if(rol.getId() == 0) {
                 Rol nuevo = repository.save(rol);
                 return nuevo;
