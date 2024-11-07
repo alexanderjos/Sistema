@@ -9,6 +9,16 @@
             "projectName": "sistema",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-SistemaApplication<Sistema>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.Valverde.sistema.SistemaApplication",
+            "projectName": "Sistema",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }

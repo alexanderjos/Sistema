@@ -8,6 +8,7 @@ import java.util.List;
 
 public interface RolService {
     public List<Rol> findAll(Pageable page);
+    public List<Rol> findAll();
     public List<Rol> findByNombre(String nombre, Pageable page);
     public Rol findById(int id);
     public Rol save(Rol rol);

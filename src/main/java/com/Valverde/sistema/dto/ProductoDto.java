@@ -11,5 +11,6 @@ public class ProductoDto {
     private String nombre;
     private String descripcion;
     private CategoriaDto categoria;
+    private boolean activo;
 
 }

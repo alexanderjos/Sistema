@@ -2,6 +2,7 @@ package com.Valverde.sistema.entity;
 
 
 import java.util.Date;
+import java.util.Set;
 
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -15,6 +16,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -43,6 +45,9 @@ public class Producto {
     @Column(name = "descripcion", length = 255, nullable = false)
     private String descripcion;
 
+    @Column(name = "activo" )
+    private boolean activo;
+    
     @Column(name = "created_at")
     @Temporal(TemporalType.TIMESTAMP)
     @CreatedDate
@@ -56,5 +61,9 @@ public class Producto {
     @ManyToOne
     @JoinColumn(name = "categoria_id", nullable = false)
     private Categoria categoria;
+    
+
+    @OneToMany(mappedBy = "producto")
+    private Set<DetalleIngreso> detalleIngresos;
 
 }

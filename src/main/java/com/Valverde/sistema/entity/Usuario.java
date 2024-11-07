@@ -8,21 +8,16 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EntityListeners;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.Table;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
+import jakarta.persistence.*;
+import lombok.*;
 
+
+@Setter
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
+@Builder
 @Table(name = "usuarios")
 @EntityListeners(AuditingEntityListener.class)
 public class Usuario {
@@ -32,13 +27,20 @@ public class Usuario {
 
     @Column(name = "nombre", length = 20, nullable = false)
     private String nombre;
+    
+    @Column(name = "email", length = 100, nullable = false)
+    private String email;
 
-    @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(
-            name = "usuario_rol",
-            joinColumns = @JoinColumn(name = "usuario_id", referencedColumnName = "id"),
-            inverseJoinColumns = @JoinColumn(name = "rol_id", referencedColumnName = "id"))
-    private Set<Rol> roles = new HashSet<>();
+
+    @Column(name = "contrasena", length = 64, nullable = false)
+    private String contrasena;
+
+    @Column(name = "activo" )
+    private boolean activo;
+    
+    @ManyToOne
+    @JoinColumn(name = "rol_id", nullable = false)
+    private Rol rol;
 
     @Column(name = "created_at")
     @Temporal(TemporalType.TIMESTAMP)
@@ -49,4 +51,7 @@ public class Usuario {
     @Temporal(TemporalType.TIMESTAMP)
     @LastModifiedDate
     private Date updatedAt;
+
+    @OneToMany(mappedBy = "usuario")
+    private Set<Ingreso> ingresos;
 }

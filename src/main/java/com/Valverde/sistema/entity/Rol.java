@@ -1,7 +1,6 @@
 package com.Valverde.sistema.entity;
 
 import java.util.Date;
-import java.util.HashSet;
 import java.util.Set;
 
 import org.springframework.data.annotation.CreatedDate;
@@ -14,11 +13,12 @@ import jakarta.persistence.EntityListeners;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -28,6 +28,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Builder
 @Table(name = "roles")
 @EntityListeners(AuditingEntityListener.class)
 public class Rol {
@@ -35,11 +36,11 @@ public class Rol {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "nombre", length = 20, nullable = false)
+    @Column(name = "nombre", length = 70, nullable = false)
     private String nombre;
 
-    @ManyToMany(mappedBy = "roles")
-    private Set<Usuario> usuarios = new HashSet<>();
+    @Column(name = "activo" )
+    private boolean activo;
 
     @Column(name = "created_at")
     @Temporal(TemporalType.TIMESTAMP)
@@ -50,4 +51,9 @@ public class Rol {
     @Temporal(TemporalType.TIMESTAMP)
     @LastModifiedDate
     private Date updatedAt;
+    
+  
+    @OneToMany(mappedBy = "rol")
+    private Set<Usuario> usuarios;
+    
 }

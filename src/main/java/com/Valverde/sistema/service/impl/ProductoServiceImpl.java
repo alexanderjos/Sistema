@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.Valverde.sistema.entity.Categoria;
-import com.Valverde.sistema.entity.Cliente;
 import com.Valverde.sistema.entity.Producto;
 import com.Valverde.sistema.exception.GeneralException;
 import com.Valverde.sistema.exception.NoDataFoundException;
@@ -90,7 +89,7 @@ public Producto save(Producto producto) {
             
             producto.setCategoria(categoria);
         } else {
-            throw new ValidateException("El tipo de documento del cliente es requerido");
+            throw new ValidateException("La categoria del producto es requerido");
         }
 
         // Validar el cliente (ya ahora con el tipo de documento cargado)
@@ -104,6 +103,7 @@ public Producto save(Producto producto) {
                     .orElseThrow(() -> new NoDataFoundException("No existe un registro como ese id"));
             registro.setNombre(producto.getNombre());
             registro.setDescripcion(producto.getDescripcion());
+            registro.setActivo(producto.isActivo());
             registro.setCategoria(producto.getCategoria());
             return repository.save(registro); // Guardar cliente actualizado
         }

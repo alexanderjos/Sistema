@@ -18,6 +18,7 @@ public class ProductoConverter extends AbstractConverter<Producto, ProductoDto> 
                 .id(entity.getId())
                 .nombre(entity.getNombre())
                 .descripcion(entity.getDescripcion())
+                .activo(entity.isActivo())
                 .categoria(categoriaConverter.fromEntity(entity.getCategoria())) // Usar la instancia
                 .build();
     }
@@ -26,7 +27,7 @@ public class ProductoConverter extends AbstractConverter<Producto, ProductoDto> 
     public Producto fromDTO(ProductoDto dto) {
         if (dto == null) return null;
         
-        // Convertir tipoDocumento
+        // Convertir categoria
         Categoria categoria = null;
         if (dto.getCategoria() != null) {
             categoria = categoriaConverter.fromDTO(dto.getCategoria());
@@ -36,6 +37,7 @@ public class ProductoConverter extends AbstractConverter<Producto, ProductoDto> 
                 .id(dto.getId())
                 .nombre(dto.getNombre())
                 .descripcion(dto.getDescripcion())
+                .activo(dto.isActivo())
                 .categoria(categoria) // Usar la instancia
                 .build();
     }
